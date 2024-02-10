@@ -1,0 +1,14 @@
+data tyoe if the data: int and string
+return type: strings and ints
+
+constructor:
+
+parameters:none
+return type: none
+description: intitializes an empty hand.
+
+add(card)
+  return type:none
+  description: adds the specific card to the hand
+  
+1. append the card to the cards list
