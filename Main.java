@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-      Hand playersJand = new Hand();
+      Hand playersHand = new Hand();
       Hand dealersHand = new Hand();
 
-      //add cards to the palyer's hand
+      //add cards to the player's hand
       playersHand.add("3D");
-      playersHand.add("(9C");
+      playersHand.add("9C");
       playersHand.display();
       System.out.println("Total: " + playersHand.total());
       
