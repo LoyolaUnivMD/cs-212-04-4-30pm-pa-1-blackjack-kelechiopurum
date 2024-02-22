@@ -8,10 +8,10 @@ public class Hand {
     }
     public void add(String card) {
         cards.add(card);
+    }
 
     //make a method to get the total  
-    }
-    public int getTotal() {
+    public int total() {
         int totalSum = 0;
         int numAces = 0;
         for (String card : cards) {
@@ -73,19 +73,28 @@ public class Hand {
           playersHand.display();
           System.out.println(playersHand.total());
         }
+      } while (choice == 1 && playersHand.total() <= 21);
 
-        innt dealersTotal = dealersHand.total();
-        int playerTotal = player.total();
-        if (dealersTotal > 21 || playerTotal > dealerTotal) {
-          System.out.println("Player Wins!");
-        } else if (dealerTotal > playerTotal) {
-          System.out.println("Dealer Wins!");
-        } else {
-          System.out.println("It's a tie!");
-        }
+      // The Dealers Turn
+      dealersHand.cards.set(1, "4S"); //Show the face-down card
+      while (dealersHand.total() < 17) {
+        dealersHand.add("3C"); // A card is dealt to the dealer
+        System.out.print("Dealer: ");
+        dealersHand.display();
+        System.out.print("Player: ");
+        playersHand.display();
+        System.out.println(playersHand.total());
+      }
+      int dealersTotal = dealersHand.total();
+      int playersTotal = playersHand.total();
+      if (dealersTotal > 21 || playersTotal > dealersTotal) {
+        System.out.println("Player Wins!");
+      } else if (dealersTotal > playersTotal) {
+        System.out.println("Dealer Wins!");
+      } else {
+        System.out.println("It's a tie!");
+      }
 
         scanner.close();
         }
-        
-      }
-    }
+  }
